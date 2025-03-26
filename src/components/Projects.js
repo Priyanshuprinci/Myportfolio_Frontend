@@ -1,11 +1,11 @@
 import React from "react";
 import "./Projects.css";
-
+import API_BASE_URL from "../config";
 const Projects = () => {
     const [projects, setProjects] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/projects')
+        fetch(`${API_BASE_URL}/projects`)
             .then((res) => res.json())
             .then((data) => setProjects(data));
     }, []);
